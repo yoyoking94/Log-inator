@@ -7,8 +7,8 @@ import Aside from '../../components/aside/aside'
 const SignIn = () => {
     return (
         <div className="signIn">
-            <Form />
-            <Aside className="Aside" />
+            <Form title={'Sign in'} negation={"don't"} log={'Register'} />
+            <Aside />
         </div>
     )
 }

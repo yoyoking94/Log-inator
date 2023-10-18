@@ -1,0 +1,28 @@
+.inputMail {
+    padding-bottom: 7px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #000842;
+}
+
+label>span {
+    color: #999;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+label>div {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+label>div>input {
+    border: none;
+    outline: none;
+
+    width: 100%;
+    padding: 0 10px;
+}
