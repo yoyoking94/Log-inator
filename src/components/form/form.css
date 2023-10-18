@@ -1,0 +1,142 @@
+.form {
+    border: 1px solid black;
+    width: 50%;
+    min-width: 430px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form>* {
+    border: 1px solid red;
+    width: 430px;
+}
+
+.title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    line-height: 30px;
+    margin-bottom: 50px;
+}
+
+.register {
+    color: #0C21C1;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    cursor: pointer;
+}
+
+.inputMail {
+    margin-bottom: 50px;
+}
+
+label>span {
+    color: #999;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.inputPassword {
+    margin-bottom: 17px;
+}
+
+.inputCheckbox {
+    display: flex;
+    justify-content: space-between;
+
+    color: #000;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    margin-bottom: 60px;
+}
+
+.inputCheckbox>label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputCheckbox>label>input {
+    margin-right: 10px;
+}
+
+
+.inputCheckbox>:nth-child(2) {
+    color: #4D4D4D;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    cursor: pointer;
+}
+
+.btn>button {
+    min-width: 430px;
+    height: 53px;
+
+    border-radius: 32px;
+    background: #0C21C1;
+    box-shadow: 0px 4px 26px 0px rgba(0, 0, 0, 0.25);
+
+    margin-bottom: 40px;
+
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.continue {
+    color: #B5B5B5;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.icons {
+    text-align: center;
+}
+
+.icons>img {
+    cursor: pointer;
+    margin: 0 10px;
+}
