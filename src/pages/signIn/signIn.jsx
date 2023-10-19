@@ -7,8 +7,8 @@ import Aside from '../../components/aside/aside'
 const SignIn = () => {
     return (
         <div className="signIn">
-            <Form title={'Sign in'} negation={"don't"} log={'Register'} />
-            <Aside />
+            <Form login={true} password={false} title={'Sign in'} negation={"don't"} log={'Register'} btn={'Login'} />
+            <Aside span={'In'} />
         </div>
     )
 }
