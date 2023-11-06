@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import /* React, */ { Component } from 'react'
 import { Link } from 'react-router-dom'
@@ -23,7 +24,6 @@ export default class form extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            input: [],
             email: ``,
             username: ``,
             password: ``,
@@ -33,12 +33,27 @@ export default class form extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit() {
-        console.log(this.state);
+    handleChange = (event, inputName) => {
+        /* console.log(this.state); */
+        this.setState({
+            [inputName]: event.target.value,
+        });
+    }
+
+    handleSubmit = () => {
+        if (this.props.password === false) {
+            console.log(`Input email value: ${this.state.email}`);
+            console.log(`Input password value: ${this.state.password}`);
+            console.log(`Input remember value: ${this.state.rememberMe}`);
+        } else if (this.props.password === true) {
+            console.log(`Input email value: ${this.state.email}`);
+            console.log(`Input user value: ${this.state.username}`);
+            console.log(`Input password value: ${this.state.password}`);
+            console.log(`Input confirmPassword value: ${this.state.confirmPassword}`);
+        }
     }
 
     render() {
-        // eslint-disable-next-line no-unused-vars
         const { title, negation, log, password, login, btn } = this.props
 
         return (
@@ -54,13 +69,13 @@ export default class form extends Component {
                         }
                     </span>
                 </div>
-                <Input icon1={Message} alt1={'email icon'} type={'text'} name={'email'} id={'email'} span={'Email'} />
+                <Input icon1={Message} alt1={'email icon'} type={'email'} name={'email'} id={'email'} span={'Email'} value={this.state.email} onChange={(e) => this.handleChange(e, "email")} />
                 {this.props.password === true &&
-                    <Input icon1={User} alt1={'email icon'} type={'text'} name={'username'} id={'username'} span={'Username'} />
+                    <Input icon1={User} alt1={'email icon'} type={'text'} name={'username'} id={'username'} span={'Username'} value={this.state.username} onChange={(e) => this.handleChange(e, "username")} />
                 }
-                <Input icon1={Padlock} icon2={Invisible} alt1={'padlock icon'} alt={"show password icon"} type={'password'} name={'password'} id={'password'} span={'Password'} />
+                <Input icon1={Padlock} icon2={Invisible} alt1={'padlock icon'} alt={"show password icon"} type={'password'} name={'password'} id={'password'} span={'Password'} value={this.state.password} onChange={(e) => this.handleChange(e, "password")} />
                 {this.props.password === true &&
-                    <Input icon1={Padlock} icon2={Invisible} alt1={'padlock icon'} alt={"show password icon"} type={'password'} name={'confirmPassword'} id={'confirmPassword'} span={'Confirm password'} />
+                    <Input icon1={Padlock} icon2={Invisible} alt1={'padlock icon'} alt={"show password icon"} type={'password'} name={'confirmPassword'} id={'confirmPassword'} span={'Confirm password'} value={this.state.confirmPassword} onChange={(e) => this.handleChange(e, "confirmPassword")} />
                 }
                 {this.props.login === true && this.props.password === false &&
                     <div className='inputCheckbox'>
@@ -68,7 +83,6 @@ export default class form extends Component {
                             <input type="checkbox" name="rememberMe" id="rememberMe" onClick={() => this.setState({ rememberMe: !this.state.rememberMe })} />
                             <span>Remember me</span>
                         </label>
-                        {/* <span>Forgot Password ?</span> */}
                     </div>
                 }
                 <div className='btn'>
