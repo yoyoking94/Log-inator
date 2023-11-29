@@ -5,3 +5,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #7980e6;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 50px;
+    margin-right: 10px;
+}

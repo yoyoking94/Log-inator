@@ -7,7 +7,7 @@ import Aside from '../../components/aside/aside'
 const SignUp = () => {
     return (
         <div className="signUp">
-            <Form password={true} login={false} title={'Sign up'} have={"have"} log={'Login'} btn={'Register'} />
+            <Form signIn={false} title={'Sign up'} have={"have"} log={'Login'} btn={'Register'} />
             <Aside span={'Up'} />
         </div>
     )

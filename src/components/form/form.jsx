@@ -22,7 +22,7 @@ import User from '../../assets/user.svg'
 
 export default class form extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             email: ``,
             username: ``,
@@ -41,11 +41,11 @@ export default class form extends Component {
     }
 
     handleSubmit = () => {
-        if (this.props.password === false) {
+        if (this.props.signIn === false) {
             console.log(`Input email value: ${this.state.email}`);
             console.log(`Input password value: ${this.state.password}`);
             console.log(`Input remember value: ${this.state.rememberMe}`);
-        } else if (this.props.password === true) {
+        } else if (this.props.signIn === true) {
             console.log(`Input email value: ${this.state.email}`);
             console.log(`Input user value: ${this.state.username}`);
             console.log(`Input password value: ${this.state.password}`);
@@ -61,23 +61,23 @@ export default class form extends Component {
                 <div className='title'>{title}</div>
                 <div className='subtitle'>
                     <span>If you {negation} have an account register <br />You can &nbsp;
-                        {this.props.password === true &&
-                            <Link to="/" className='register'>{log} here !</Link>
-                        }
-                        {this.props.login === true &&
+                        {this.props.signIn === true &&
                             <Link to="/SignUp" className='register'>{log} here !</Link>
+                        }
+                        {this.props.signIn === false &&
+                            <Link to="/" className='register'>{log} here !</Link>
                         }
                     </span>
                 </div>
                 <Input icon1={Message} alt1={'email icon'} type={'email'} name={'email'} id={'email'} span={'Email'} value={this.state.email} onChange={(e) => this.handleChange(e, "email")} />
-                {this.props.password === true &&
+                {this.props.signIn === false &&
                     <Input icon1={User} alt1={'email icon'} type={'text'} name={'username'} id={'username'} span={'Username'} value={this.state.username} onChange={(e) => this.handleChange(e, "username")} />
                 }
                 <Input icon1={Padlock} icon2={Invisible} alt1={'padlock icon'} alt={"show password icon"} type={'password'} name={'password'} id={'password'} span={'Password'} value={this.state.password} onChange={(e) => this.handleChange(e, "password")} />
-                {this.props.password === true &&
+                {this.props.signIn === false &&
                     <Input icon1={Padlock} icon2={Invisible} alt1={'padlock icon'} alt={"show password icon"} type={'password'} name={'confirmPassword'} id={'confirmPassword'} span={'Confirm password'} value={this.state.confirmPassword} onChange={(e) => this.handleChange(e, "confirmPassword")} />
                 }
-                {this.props.login === true && this.props.password === false &&
+                {this.props.signIn === true &&
                     <div className='inputCheckbox'>
                         <label>
                             <input type="checkbox" name="rememberMe" id="rememberMe" onClick={() => this.setState({ rememberMe: !this.state.rememberMe })} />
@@ -88,7 +88,7 @@ export default class form extends Component {
                 <div className='btn'>
                     <button onClick={this.handleSubmit}>{btn}</button>
                 </div>
-                {this.props.login === true &&
+                {this.props.signIn === true &&
                     <>
                         <div className='continue'>or continue with</div>
                         <div className='icons'>
